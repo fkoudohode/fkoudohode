@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Florent Koudohode</title>
+
+  <meta name="description" content="Research statement and themes of Florent Koudohode — event-triggered control, boundary control of PDEs, predictor feedback for delay and quantization. ERC C-NORA project at TU Crete." />
+  <meta name="author" content="Florent Koudohode" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Research — Florent Koudohode" />
+  <meta property="og:description" content="Control of infinite-dimensional systems under delay, quantization and event-triggered communication." />
+  <meta property="og:url" content="https://fkoudohode.com/research.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- KaTeX for inline math -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B1F4A'/%3E%3Ctext x='50' y='68' font-family='Playfair Display, serif' font-size='62' font-weight='700' text-anchor='middle' fill='%23C39B32'%3EF%3C/text%3E%3C/svg%3E" />
+  <script defer src="scripts.js"></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="Florent Koudohode — home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/img/profile-brand.png" alt="" /></span>
+        <span class="brand-name">Florent Koudohode</span>
+      </a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <!-- ============================================================
+             NAV : Research & Publications réunis en dropdown
+             → Le parent <a href="work.html"> ouvre une page "chooser"
+               qui propose les deux destinations sur une page double.
+             → Le dropdown sub-menu s'ouvre au survol (desktop) ou au
+               tap (mobile) pour accéder directement à l'une ou l'autre.
+             ============================================================ -->
+        <div class="nav-dropdown-parent">
+          <a href="work.html" class="nav-dropdown-trigger active" data-i18n="nav_work">Research</a>
+          <button class="nav-dropdown-toggle" aria-label="Open submenu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="research.html" role="menuitem" class="active" data-i18n="nav_research">Research</a>
+            <a href="publications.html" role="menuitem" data-i18n="nav_publications">Publications</a>
+          </div>
+        </div>
+        <a href="teaching.html" data-i18n="nav_teaching">Teaching</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <div class="nav-tools">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button data-lang="en" class="lang-btn active" aria-label="English">EN</button>
+            <span aria-hidden="true">·</span>
+            <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ============================================================
+         🔬 PAGE RECHERCHE
+         ────────────────────────────────────────────────────────────
+         POUR MODIFIER LES TEXTES :
+         → Tous les textes (énoncé + 3 thèmes + encart ERC) sont
+           dans scripts.js → `translations.en.research_*` et
+           `translations.fr.research_*` (vers la ligne 484).
+
+         POUR AJOUTER UN 4ᵉ THÈME :
+         1) Dupliquer un bloc <article class="research-theme-detail">
+         2) Changer le numéro (data-theme-i et research-theme-num)
+         3) Ajouter les clés research_theme4_h, research_theme4_p
+            dans translations.en ET translations.fr
+         4) Lier les papiers via <a href="publications.html#J?">
+
+         FORMULES MATHÉMATIQUES :
+         → Syntaxe LaTeX entre $$ ... $$, rendu automatique par
+           KaTeX (déjà chargé en haut de la page).
+         ============================================================ -->
+
+    <!-- ============================================================
+         BANNIÈRE DE PAGE
+         ============================================================ -->
+    <section class="page-banner">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-i18n="research_banner_eyebrow">Research</p>
+        <h1 class="page-banner-title" data-i18n="research_banner_title">Control, at the edge of the possible.</h1>
+        <p class="page-banner-lead" data-i18n="research_banner_lead">A short statement on what I work on, why it matters, and where it is going.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RESEARCH STATEMENT (2 paragraphs)
+         ============================================================ -->
+    <section class="research-body">
+      <div class="section-inner research-statement">
+        <p data-i18n="research_statement_p1">Most of the systems we care about in engineering — flexible structures, chemical reactors, traffic networks, networks of distributed sensors — do not live in a finite-dimensional state space. Their natural language is that of partial differential equations: state and dynamics are infinite-dimensional, propagation is bounded by physics, and control acts most often through the boundary. The classical control toolbox, built for ordinary differential equations and continuous communication, does not directly transfer.</p>
+        <p data-i18n="research_statement_p2">My research lives at this intersection. I design control laws for PDEs that remain robust under the constraints that the real world imposes — namely, that measurements arrive only at discrete instants, that they are quantized to finitely many levels, that control signals are subject to transmission delay, and that bandwidth must be used parsimoniously. The tools I rely on are Lyapunov analysis, backstepping transformations, predictor feedback, observer design, and a careful treatment of event-triggering rules. The result, when it works, is a control law that does more with less — provably stable, computationally honest, and ready to be deployed.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THEMES (3 detailed sections)
+         ============================================================ -->
+    <section class="research-themes-detail">
+      <div class="section-inner">
+
+        <!-- Theme 1 -->
+        <article class="research-theme-detail" data-theme-i="01">
+          <header class="research-theme-head">
+            <span class="research-theme-num">01</span>
+            <h2 class="research-theme-h" data-i18n="research_theme1_h">Event-triggered control</h2>
+          </header>
+          <div class="research-theme-grid">
+            <div class="research-theme-text">
+              <p data-i18n="research_theme1_p">Classical feedback updates the control signal continuously, which is impossible on a digital platform and wasteful on a networked one. Event-triggered control replaces that continuous update with a triggering rule — a condition on the state, the error, or both — that determines, intrinsically, when the next update is needed. The challenge is to design rules that guarantee stability, exclude Zeno behaviour, and remain robust to disturbances. I have worked on event-triggered laws for the wave, Schrödinger and reaction–diffusion equations, as well as for 2×2 hyperbolic systems.</p>
+              <p class="research-theme-pubs"><span data-i18n="research_theme_pubs">Related papers:</span>
+                <a href="publications.html#J5" class="research-theme-pub">Automatica 2026</a>,
+                <a href="publications.html#J3" class="research-theme-pub">SCL 2024</a>,
+                <a href="publications.html#J1" class="research-theme-pub">Automatica 2022</a>,
+                <a href="publications.html#C6" class="research-theme-pub">CDC 2026</a>,
+                <a href="publications.html#C2" class="research-theme-pub">IFAC 2022</a>,
+                <a href="publications.html#C1" class="research-theme-pub">ECC 2022</a>.
+              </p>
+            </div>
+            <aside class="research-theme-formula">
+              <p class="research-theme-formula-label">Triggering condition (schematic)</p>
+              <div class="research-formula-block">
+                $$\|e(t)\|^2 \,\geq\, \eta\, \|u(t)\|^2 + \mu\, e^{-\rho t}$$
+              </div>
+              <p class="research-theme-formula-note">A bound on the deviation <span class="kbd-math">$e(t)$</span> between the last transmitted state and the current state, with offset <span class="kbd-math">$\mu e^{-\rho t}$</span> ensuring a strictly positive minimum inter-execution time.</p>
+            </aside>
+          </div>
+        </article>
+
+        <!-- Theme 2 -->
+        <article class="research-theme-detail" data-theme-i="02">
+          <header class="research-theme-head">
+            <span class="research-theme-num">02</span>
+            <h2 class="research-theme-h" data-i18n="research_theme2_h">Boundary control of PDEs</h2>
+          </header>
+          <div class="research-theme-grid">
+            <div class="research-theme-text">
+              <p data-i18n="research_theme2_p">When a physical system is described by a PDE, control acts most often at the boundary — a heated wall, a regulated valve, an end actuator. Stabilising such a system requires designing feedback laws that propagate through the spatial domain in finite time. The backstepping methodology, pioneered by Krstic and collaborators, transforms the open-loop PDE into a chosen target system via an invertible Volterra transformation. I use this framework in conjunction with Lyapunov functionals and observer design for measurement-output settings.</p>
+              <p class="research-theme-pubs"><span data-i18n="research_theme_pubs">Related papers:</span>
+                <a href="publications.html#J5" class="research-theme-pub">Automatica 2026</a>,
+                <a href="publications.html#J3" class="research-theme-pub">SCL 2024 (reaction–diffusion)</a>,
+                <a href="publications.html#J1" class="research-theme-pub">Automatica 2022 (wave)</a>,
+                <a href="publications.html#C1" class="research-theme-pub">ECC 2022 (Schrödinger)</a>.
+              </p>
+            </div>
+            <aside class="research-theme-formula">
+              <p class="research-theme-formula-label">Backstepping transformation</p>
+              <div class="research-formula-block">
+                $$w(x,t) = u(x,t) - \int_0^x k(x,y)\, u(y,t)\, dy$$
+              </div>
+              <p class="research-theme-formula-note">Volterra integral transformation mapping the open-loop PDE in <span class="kbd-math">$u$</span> to a stable target system in <span class="kbd-math">$w$</span>; the kernel <span class="kbd-math">$k$</span> solves a Goursat-type PDE.</p>
+            </aside>
+          </div>
+        </article>
+
+        <!-- Theme 3 -->
+        <article class="research-theme-detail" data-theme-i="03">
+          <header class="research-theme-head">
+            <span class="research-theme-num">03</span>
+            <h2 class="research-theme-h" data-i18n="research_theme3_h">Predictor feedback for delay and quantization</h2>
+          </header>
+          <div class="research-theme-grid">
+            <div class="research-theme-text">
+              <p data-i18n="research_theme3_p">Input delay is endemic to networked control: control signals reach the plant only after a transmission lag. Predictor feedback compensates this delay by acting on a future prediction of the state. Quantization — the unavoidable rounding induced by digital sensors and actuators — adds a second layer of imperfection, and the two effects interact. My recent work designs switched predictor-feedback laws that simultaneously compensate both, with semiglobal stability guarantees for nonlinear plants.</p>
+              <p class="research-theme-pubs"><span data-i18n="research_theme_pubs">Related papers:</span>
+                <a href="publications.html#J4" class="research-theme-pub">IEEE TAC 2025</a>,
+                <a href="publications.html#J2" class="research-theme-pub">IMA JMCI 2025</a>,
+                <a href="publications.html#J2b" class="research-theme-pub">SCL 2024</a>,
+                <a href="publications.html#C5" class="research-theme-pub">IFAC 2025</a>,
+                <a href="publications.html#C4" class="research-theme-pub">ACC 2025</a>,
+                <a href="publications.html#C3" class="research-theme-pub">CDC 2024</a>.
+              </p>
+            </div>
+            <aside class="research-theme-formula">
+              <p class="research-theme-formula-label">Predictor feedback law</p>
+              <div class="research-formula-block">
+                $$U(t) = K\, e^{A D}\, X(t) + K \int_{t-D}^{t} e^{A(t-s)}\, B\, U(s)\, ds$$
+              </div>
+              <p class="research-theme-formula-note">Reduction-type predictor feedback for input delay <span class="kbd-math">$D$</span>: the loop is closed on the <em>predicted</em> state <span class="kbd-math">$X(t+D)$</span>, recovering the delay-free spectrum.</p>
+            </aside>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ERC C-NORA PROJECT BOX
+         ============================================================ -->
+    <section class="research-erc-section">
+      <div class="section-inner">
+        <div class="research-erc">
+          <div class="research-erc-badge">
+            <span class="research-erc-label">European Research Council</span>
+            <span class="research-erc-grant">Consolidator Grant · 2022</span>
+            <span class="research-erc-id">#101088147</span>
+          </div>
+          <div class="research-erc-body">
+            <h3 class="research-erc-h" data-i18n="research_erc_title">ERC Consolidator Grant — C-NORA</h3>
+            <p data-i18n="research_erc_text">My current research is supported by the European Research Council under the Consolidator Grant C-NORA (#101088147), led at the Technical University of Crete by Prof. Nikolaos Bekiaris-Liberis. The project addresses micro-macro secure control of infinite-dimensional transport systems.</p>
+            <a class="btn btn-primary" href="https://c-nora.tuc.gr" target="_blank" rel="noopener">
+              <span data-i18n="research_erc_link">Project website</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <div class="footer-brand-mark">F<span>.</span>K</div>
+        <p class="footer-tagline" data-i18n="footer_tagline">Postdoctoral researcher in control of partial differential equations.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_navigate">Navigate</h4>
+        <ul>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="research.html" data-i18n="nav_research">Research</a></li>
+          <li><a href="publications.html" data-i18n="nav_publications">Publications</a></li>
+          <li><a href="teaching.html" data-i18n="nav_teaching">Teaching</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_elsewhere">Elsewhere</h4>
+        <ul class="footer-links-icons">
+          <li><a href="https://scholar.google.com/citations?user=VNpXV9EAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-8586-3336" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.researchgate.net/profile/Florent-Koudohode" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://www.linkedin.com/in/florent-koudohode-564a16180/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/florent.koudohode.9" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://dblp.org/pid/326/1565.html" target="_blank" rel="noopener">DBLP</a></li>
+          <li><a href="https://laas.hal.science/tel-04279601v3" target="_blank" rel="noopener">HAL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_contact">Contact</h4>
+        <address class="footer-address">
+          School of ECE,<br/>
+          Technical University of Crete<br/>
+          73 100 Chania, Greece<br/>
+          <a href="mailto:fkoudohode@tuc.gr">fkoudohode@tuc.gr</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="copyYear">2026</span> Florent Koudohode · <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p><span data-i18n="footer_updated">Last updated</span>: <span id="lastUpdated">May 2026</span></p>
+    </div>
+  </footer>
+</body>
+</html>
