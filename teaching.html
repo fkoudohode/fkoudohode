@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching &amp; Supervision — Florent Koudohode</title>
+
+  <meta name="description" content="Teaching and supervision activities of Florent Koudohode at the Technical University of Crete, Toulouse INP-ENSEEIHT, Université Paul Sabatier, and INSA Toulouse." />
+  <meta name="author" content="Florent Koudohode" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Teaching &amp; Supervision — Florent Koudohode" />
+  <meta property="og:description" content="Courses, student supervision and teaching materials." />
+  <meta property="og:url" content="https://fkoudohode.com/teaching.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B1F4A'/%3E%3Ctext x='50' y='68' font-family='Playfair Display, serif' font-size='62' font-weight='700' text-anchor='middle' fill='%23C39B32'%3EF%3C/text%3E%3C/svg%3E" />
+  <script defer src="scripts.js"></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="Florent Koudohode — home">
+        <span class="brand-mark" aria-hidden="true">F<span class="brand-dot">.</span>K</span>
+        <span class="brand-name">Florent Koudohode</span>
+      </a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="research.html" data-i18n="nav_research">Research</a>
+        <a href="publications.html" data-i18n="nav_publications">Publications</a>
+        <a href="teaching.html" class="active" data-i18n="nav_teaching">Teaching</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <div class="nav-tools">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button data-lang="en" class="lang-btn active" aria-label="English">EN</button>
+            <span aria-hidden="true">·</span>
+            <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ============================================================
+         🎓 PAGE ENSEIGNEMENT
+         ────────────────────────────────────────────────────────────
+         POUR MODIFIER LE CONTENU :
+         → Cours       → scripts.js, tableau `teachingCourses`
+         → Étudiants   → scripts.js, tableau `supervisions`
+         → Matériels   → scripts.js, tableau `teachingMaterials`
+                         + déposer les fichiers PDF dans
+                         `assets/teaching/` puis référencer le
+                         chemin dans la clé `file:` de l'entrée.
+
+         FORMAT D'UN COURS :
+         { year: "2024–2025",
+           title: "Nom du cours",
+           inst: "Établissement",
+           role: "Enseignant / Chargé de TD / etc." }
+
+         FORMAT D'UN MATÉRIEL :
+         { type: "Slides | Notes | Exercises",
+           year: 2024,
+           title: "Titre du document",
+           file: "assets/teaching/mon-pdf.pdf" }
+         ============================================================ -->
+
+    <!-- ============================================================
+         BANNIÈRE DE PAGE
+         ============================================================ -->
+    <section class="page-banner">
+      <div class="section-inner">
+        <p class="section-eyebrow" data-i18n="teaching_banner_eyebrow">Teaching &amp; Supervision</p>
+        <h1 class="page-banner-title" data-i18n="teaching_banner_title">Passing it on.</h1>
+        <p class="page-banner-lead" data-i18n="teaching_banner_lead">Courses taught, students supervised, and the materials I have made available.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COURSES — populated by renderTeaching() in scripts.js
+         To add a course: edit the `teachingCourses` array in scripts.js
+         ============================================================ -->
+    <section class="teaching-body">
+      <div class="section-inner">
+        <div class="teach-block">
+          <h2 class="teach-block-h" data-i18n="teach_h_courses">Courses</h2>
+          <div id="teachCoursesList" class="teach-list" aria-live="polite"></div>
+        </div>
+
+        <!-- ============================================================
+             SUPERVISION — populated by renderTeaching() in scripts.js
+             To add a student: edit the `supervisions` array in scripts.js
+             ============================================================ -->
+        <div class="teach-block">
+          <h2 class="teach-block-h" data-i18n="teach_h_supervision">Supervision</h2>
+          <div id="teachSupervisionList" class="teach-list teach-supervision"></div>
+        </div>
+
+        <!-- ============================================================
+             MATERIALS — populated by renderTeaching() in scripts.js
+             To add material: edit the `teachingMaterials` array in scripts.js
+             Drop the file into assets/teaching/ and reference it.
+             ============================================================ -->
+        <div class="teach-block">
+          <h2 class="teach-block-h" data-i18n="teach_h_materials">Materials</h2>
+          <div id="teachMaterialsList" class="teach-materials"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <div class="footer-brand-mark">F<span>.</span>K</div>
+        <p class="footer-tagline" data-i18n="footer_tagline">Postdoctoral researcher in control of partial differential equations.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_navigate">Navigate</h4>
+        <ul>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="research.html" data-i18n="nav_research">Research</a></li>
+          <li><a href="publications.html" data-i18n="nav_publications">Publications</a></li>
+          <li><a href="teaching.html" data-i18n="nav_teaching">Teaching</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_elsewhere">Elsewhere</h4>
+        <ul class="footer-links-icons">
+          <li><a href="https://scholar.google.com/citations?user=VNpXV9EAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-8586-3336" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.researchgate.net/profile/Florent-Koudohode" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://www.linkedin.com/in/florent-koudohode-564a16180/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://dblp.org/pid/326/1565.html" target="_blank" rel="noopener">DBLP</a></li>
+          <li><a href="https://laas.hal.science/tel-04279601v3" target="_blank" rel="noopener">HAL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_contact">Contact</h4>
+        <address class="footer-address">
+          School of ECE,<br/>
+          Technical University of Crete<br/>
+          73 100 Chania, Greece<br/>
+          <a href="mailto:fkoudohode@tuc.gr">fkoudohode@tuc.gr</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="copyYear">2026</span> Florent Koudohode · <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p><span data-i18n="footer_updated">Last updated</span>: <span id="lastUpdated">May 2026</span></p>
+    </div>
+  </footer>
+</body>
+</html>
