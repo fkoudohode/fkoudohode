@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research &amp; Publications | Florent Koudohode</title>
+
+  <meta name="description" content="Choose between research themes (statement, focus areas, ERC project) or the full list of publications by Florent Koudohode." />
+  <meta name="author" content="Florent Koudohode" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Research &amp; Publications | Florent Koudohode" />
+  <meta property="og:url" content="https://fkoudohode.com/work.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B1F4A'/%3E%3Ctext x='50' y='68' font-family='Playfair Display, serif' font-size='62' font-weight='700' text-anchor='middle' fill='%23C39B32'%3EF%3C/text%3E%3C/svg%3E" />
+  <script defer src="scripts.js"></script>
+</head>
+
+<body>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="Florent Koudohode, home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/img/profile-brand.png" alt="" /></span>
+        <span class="brand-name">Florent Koudohode</span>
+      </a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <div class="nav-dropdown-parent">
+          <a href="work.html" class="nav-dropdown-trigger active" data-i18n="nav_work">Research</a>
+          <button class="nav-dropdown-toggle" aria-label="Open submenu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="research.html" role="menuitem" data-i18n="nav_research">Research</a>
+            <a href="publications.html" role="menuitem" data-i18n="nav_publications">Publications</a>
+          </div>
+        </div>
+        <a href="teaching.html" data-i18n="nav_teaching">Teaching</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <div class="nav-tools">
+          <div class="lang-toggle" role="group" aria-label="Language">
+            <button data-lang="en" class="lang-btn active" aria-label="English">EN</button>
+            <span aria-hidden="true">·</span>
+            <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ============================================================
+         🔀 PAGE DOUBLE : Research / Publications
+         ────────────────────────────────────────────────────────────
+         Cette page agit comme un sélecteur entre deux destinations :
+         le côté gauche mène à research.html (énoncé + thèmes),
+         le côté droit à publications.html (liste filtrable).
+
+         POUR MODIFIER LES LIBELLÉS :
+         → translations.en.work_* / translations.fr.work_*
+           dans scripts.js.
+         ============================================================ -->
+    <section class="work-chooser">
+      <a href="research.html" class="work-half work-half-left">
+        <div class="work-half-inner">
+          <span class="work-half-num">01</span>
+          <h2 class="work-half-h" data-i18n="work_research_title">Research</h2>
+          <p class="work-half-lead" data-i18n="work_research_lead">My research statement, the three themes I work on, and the ERC C-NORA project.</p>
+          <ul class="work-half-tags">
+            <li data-i18n="work_research_t1">Event-triggered control</li>
+            <li data-i18n="work_research_t2">Boundary control of PDEs</li>
+            <li data-i18n="work_research_t3">Predictor feedback</li>
+          </ul>
+          <span class="work-half-cta">
+            <span data-i18n="work_explore_research">Explore research</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <svg class="work-half-pattern" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="wgrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--color-gold)" stop-opacity="0"/>
+              <stop offset="50%" stop-color="var(--color-gold)" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="var(--color-gold)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M 0 400 Q 100 300 200 400 T 400 400 T 600 400" fill="none" stroke="url(#wgrad1)" stroke-width="1.2"/>
+          <path d="M 0 430 Q 100 340 200 430 T 400 430 T 600 430" fill="none" stroke="url(#wgrad1)" stroke-width="0.8" opacity="0.55"/>
+          <path d="M 0 460 Q 100 380 200 460 T 400 460 T 600 460" fill="none" stroke="url(#wgrad1)" stroke-width="0.5" opacity="0.35"/>
+        </svg>
+      </a>
+
+      <div class="work-divider" aria-hidden="true">
+        <span class="work-divider-or" data-i18n="work_or">or</span>
+      </div>
+
+      <a href="publications.html" class="work-half work-half-right">
+        <div class="work-half-inner">
+          <span class="work-half-num">02</span>
+          <h2 class="work-half-h" data-i18n="work_pub_title">Publications</h2>
+          <p class="work-half-lead" data-i18n="work_pub_lead">All journal articles, conference proceedings, preprints and the doctoral thesis, filterable by type.</p>
+          <ul class="work-half-tags">
+            <li>Automatica</li>
+            <li>SCL</li>
+            <li>IEEE TAC</li>
+            <li>CDC · ACC · ECC · IFAC</li>
+          </ul>
+          <span class="work-half-cta">
+            <span data-i18n="work_browse_pubs">Browse publications</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <svg class="work-half-pattern" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="wgrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--color-blue)" stop-opacity="0"/>
+              <stop offset="50%" stop-color="var(--color-blue)" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="var(--color-blue)" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- Patron de "spectre" pour différencier visuellement -->
+          <g stroke="url(#wgrad2)" fill="none">
+            <line x1="60"  y1="320" x2="60"  y2="480" stroke-width="2"/>
+            <line x1="110" y1="280" x2="110" y2="520" stroke-width="2"/>
+            <line x1="160" y1="350" x2="160" y2="450" stroke-width="2"/>
+            <line x1="210" y1="220" x2="210" y2="580" stroke-width="2"/>
+            <line x1="260" y1="300" x2="260" y2="500" stroke-width="2"/>
+            <line x1="310" y1="250" x2="310" y2="550" stroke-width="2"/>
+            <line x1="360" y1="370" x2="360" y2="430" stroke-width="2"/>
+            <line x1="410" y1="290" x2="410" y2="510" stroke-width="2"/>
+            <line x1="460" y1="330" x2="460" y2="470" stroke-width="2"/>
+            <line x1="510" y1="260" x2="510" y2="540" stroke-width="2"/>
+            <line x1="560" y1="310" x2="560" y2="490" stroke-width="2"/>
+          </g>
+        </svg>
+      </a>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="footer-brand-mark" aria-label="Florent Koudohode, home"><img src="assets/img/profile-brand.png" alt="" /></a>
+        <p class="footer-tagline" data-i18n="footer_tagline">Postdoctoral researcher in control of partial differential equations.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_navigate">Navigate</h4>
+        <ul>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="research.html" data-i18n="nav_research">Research</a></li>
+          <li><a href="publications.html" data-i18n="nav_publications">Publications</a></li>
+          <li><a href="teaching.html" data-i18n="nav_teaching">Teaching</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_elsewhere">Elsewhere</h4>
+        <ul class="footer-links-icons">
+          <li><a href="https://scholar.google.com/citations?user=VNpXV9EAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-8586-3336" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.researchgate.net/profile/Florent-Koudohode" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://www.linkedin.com/in/florent-koudohode-564a16180/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/florent.koudohode.9" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://dblp.org/pid/326/1565.html" target="_blank" rel="noopener">DBLP</a></li>
+          <li><a href="https://laas.hal.science/tel-04279601v3" target="_blank" rel="noopener">HAL</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-h" data-i18n="footer_contact">Contact</h4>
+        <address class="footer-address">
+          School of ECE,<br/>
+          Technical University of Crete<br/>
+          73 100 Chania, Greece<br/>
+          <a href="mailto:fkoudohode@tuc.gr">fkoudohode@tuc.gr</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="copyYear">2026</span> Florent Koudohode · <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p><span data-i18n="footer_updated">Last updated</span>: <span id="lastUpdated">May 2026</span></p>
+    </div>
+  </footer>
+</body>
+</html>

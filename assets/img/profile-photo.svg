@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1F4A"/>
+      <stop offset="100%" stop-color="#06122E"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C39B32" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C39B32" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#C39B32" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <!-- Decorative wave -->
+  <path d="M 0 280 Q 100 200 200 280 T 400 280" fill="none" stroke="url(#wave)" stroke-width="1.4"/>
+  <path d="M 0 310 Q 100 240 200 310 T 400 310" fill="none" stroke="url(#wave)" stroke-width="0.8" opacity="0.55"/>
+  <path d="M 0 340 Q 100 290 200 340 T 400 340" fill="none" stroke="url(#wave)" stroke-width="0.5" opacity="0.35"/>
+  <!-- Monogram -->
+  <text x="200" y="260" font-family="Playfair Display, Georgia, serif" font-size="170" font-weight="700" text-anchor="middle" fill="#C39B32" letter-spacing="-2">F.K</text>
+  <!-- Caption -->
+  <text x="200" y="430" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" text-anchor="middle" fill="#C39B32" opacity="0.7">PLACEHOLDER · REPLACE WITH PHOTO</text>
+</svg>
